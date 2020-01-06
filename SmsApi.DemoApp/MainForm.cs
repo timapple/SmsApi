@@ -65,7 +65,9 @@ namespace SmsApi.DemoApp
                     SendSmsGroupBox.Enabled = true;
                     SendSmsSimComboBox.Items.AddRange(sims.ToArray());
                     Text = $"{TITLE} [CONNECTED]";
-                    MessageBox.Show("Sims loaded", "SMS API", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Sims loaded", "SMS API", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (SendSmsSimComboBox.Items.Count > 0)
+                        SendSmsSimComboBox.SelectedIndex = 0;
                 }
                 else
                 {
@@ -104,7 +106,7 @@ namespace SmsApi.DemoApp
         {
             foreach (DataGridViewRow row in OutboxDataGridView.Rows)
             {
-                if (Equals(row.Cells[OutboxColumn.Name].Value, sentObjectUpdate.Id))
+                if (Equals(row.Cells[Outbox_IdColumn.Name].Value, sentObjectUpdate.Id))
                 {
                     row.Cells[Outbox_StatusColumn.Name].Value = sentObjectUpdate.Status ? "Sent" : "Failed";
                     OutboxDataGridView.Refresh();
@@ -135,8 +137,6 @@ namespace SmsApi.DemoApp
 
         private void SendSmsButton_Click(object sender, EventArgs e)
         {
-            SendSmsContentTextBox.Text = Guid.NewGuid().ToString().ToUpper();
-
             if (SendSmsSimComboBox.SelectedItem is Sim sim)
             {
                 SmsApiClient.Send(new SendObject(SendSmsRecipientTextBox.Text, SendSmsContentTextBox.Text), sim.Port);

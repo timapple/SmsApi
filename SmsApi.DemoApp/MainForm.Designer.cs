@@ -31,11 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ApiCredentialsGroupBox = new System.Windows.Forms.GroupBox();
             this.ConnectApiButton = new System.Windows.Forms.Button();
             this.ApiPasswordTextBox = new System.Windows.Forms.TextBox();
@@ -57,20 +57,20 @@
             this.MessagesSplitContainer = new System.Windows.Forms.SplitContainer();
             this.InboxLabel = new System.Windows.Forms.Label();
             this.InboxDataGridView = new System.Windows.Forms.DataGridView();
-            this.OutboxDataGridView = new System.Windows.Forms.DataGridView();
-            this.OutboxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Outbox_RecipientColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Outbox_SentDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Outbox_ContentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Outbox_StatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Outbox_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OutboxLabel = new System.Windows.Forms.Label();
             this.InboxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Inbox_SimPortColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Inbox_SenderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Inbox_ReceivedDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Inbox_ContentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Inbox_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OutboxDataGridView = new System.Windows.Forms.DataGridView();
+            this.OutboxLabel = new System.Windows.Forms.Label();
+            this.Outbox_SentDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Outbox_StatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Outbox_RecipientColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Outbox_ContentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Outbox_IdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Outbox_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApiCredentialsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ApiPortNumericUpDown)).BeginInit();
             this.SendSmsGroupBox.SuspendLayout();
@@ -119,7 +119,7 @@
             this.ApiPasswordTextBox.Name = "ApiPasswordTextBox";
             this.ApiPasswordTextBox.Size = new System.Drawing.Size(389, 25);
             this.ApiPasswordTextBox.TabIndex = 7;
-            this.ApiPasswordTextBox.Text = "apipass";
+            this.ApiPasswordTextBox.Text = "apipassword";
             this.ApiPasswordTextBox.UseSystemPasswordChar = true;
             // 
             // ApiPasswordLabel
@@ -186,7 +186,7 @@
             this.ApiHostTextBox.Name = "ApiHostTextBox";
             this.ApiHostTextBox.Size = new System.Drawing.Size(389, 25);
             this.ApiHostTextBox.TabIndex = 1;
-            this.ApiHostTextBox.Text = "192.168.5.150";
+            this.ApiHostTextBox.Text = "10.10.1.25";
             // 
             // ApiHostLabel
             // 
@@ -363,112 +363,6 @@
             this.InboxDataGridView.Size = new System.Drawing.Size(695, 306);
             this.InboxDataGridView.TabIndex = 0;
             // 
-            // OutboxDataGridView
-            // 
-            this.OutboxDataGridView.AllowUserToAddRows = false;
-            this.OutboxDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.OutboxDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.OutboxDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.OutboxDataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.OutboxDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.OutboxDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.OutboxDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.OutboxDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.OutboxDataGridView.ColumnHeadersHeight = 40;
-            this.OutboxDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.OutboxDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.OutboxColumn,
-            this.Outbox_RecipientColumn,
-            this.Outbox_SentDateColumn,
-            this.Outbox_ContentColumn,
-            this.Outbox_StatusColumn,
-            this.Outbox_ExtraColumn});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.OutboxDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
-            this.OutboxDataGridView.EnableHeadersVisualStyles = false;
-            this.OutboxDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.OutboxDataGridView.Location = new System.Drawing.Point(0, 20);
-            this.OutboxDataGridView.MultiSelect = false;
-            this.OutboxDataGridView.Name = "OutboxDataGridView";
-            this.OutboxDataGridView.ReadOnly = true;
-            this.OutboxDataGridView.RowHeadersVisible = false;
-            this.OutboxDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.OutboxDataGridView.Size = new System.Drawing.Size(695, 305);
-            this.OutboxDataGridView.TabIndex = 2;
-            // 
-            // OutboxColumn
-            // 
-            this.OutboxColumn.HeaderText = "";
-            this.OutboxColumn.Name = "OutboxColumn";
-            this.OutboxColumn.ReadOnly = true;
-            this.OutboxColumn.Visible = false;
-            // 
-            // Outbox_RecipientColumn
-            // 
-            this.Outbox_RecipientColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Outbox_RecipientColumn.HeaderText = "Recipient";
-            this.Outbox_RecipientColumn.Name = "Outbox_RecipientColumn";
-            this.Outbox_RecipientColumn.ReadOnly = true;
-            this.Outbox_RecipientColumn.Width = 84;
-            // 
-            // Outbox_SentDateColumn
-            // 
-            this.Outbox_SentDateColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle7.Format = "MMMM d, yyyy HH:mm:ss";
-            this.Outbox_SentDateColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Outbox_SentDateColumn.HeaderText = "Sent Date";
-            this.Outbox_SentDateColumn.Name = "Outbox_SentDateColumn";
-            this.Outbox_SentDateColumn.ReadOnly = true;
-            this.Outbox_SentDateColumn.Width = 80;
-            // 
-            // Outbox_ContentColumn
-            // 
-            this.Outbox_ContentColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Outbox_ContentColumn.HeaderText = "Content";
-            this.Outbox_ContentColumn.Name = "Outbox_ContentColumn";
-            this.Outbox_ContentColumn.ReadOnly = true;
-            this.Outbox_ContentColumn.Width = 76;
-            // 
-            // Outbox_StatusColumn
-            // 
-            this.Outbox_StatusColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Outbox_StatusColumn.HeaderText = "Status";
-            this.Outbox_StatusColumn.Name = "Outbox_StatusColumn";
-            this.Outbox_StatusColumn.ReadOnly = true;
-            this.Outbox_StatusColumn.Width = 66;
-            // 
-            // Outbox_ExtraColumn
-            // 
-            this.Outbox_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Outbox_ExtraColumn.HeaderText = "";
-            this.Outbox_ExtraColumn.Name = "Outbox_ExtraColumn";
-            this.Outbox_ExtraColumn.ReadOnly = true;
-            // 
-            // OutboxLabel
-            // 
-            this.OutboxLabel.AutoSize = true;
-            this.OutboxLabel.Location = new System.Drawing.Point(-3, 0);
-            this.OutboxLabel.Name = "OutboxLabel";
-            this.OutboxLabel.Size = new System.Drawing.Size(51, 17);
-            this.OutboxLabel.TabIndex = 2;
-            this.OutboxLabel.Text = "Outbox";
-            // 
             // InboxColumn
             // 
             this.InboxColumn.HeaderText = "";
@@ -516,6 +410,111 @@
             this.Inbox_ExtraColumn.HeaderText = "";
             this.Inbox_ExtraColumn.Name = "Inbox_ExtraColumn";
             this.Inbox_ExtraColumn.ReadOnly = true;
+            // 
+            // OutboxDataGridView
+            // 
+            this.OutboxDataGridView.AllowUserToAddRows = false;
+            this.OutboxDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.OutboxDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.OutboxDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OutboxDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.OutboxDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OutboxDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.OutboxDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.OutboxDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.OutboxDataGridView.ColumnHeadersHeight = 40;
+            this.OutboxDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.OutboxDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Outbox_SentDateColumn,
+            this.Outbox_StatusColumn,
+            this.Outbox_RecipientColumn,
+            this.Outbox_ContentColumn,
+            this.Outbox_IdColumn,
+            this.Outbox_ExtraColumn});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.OutboxDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            this.OutboxDataGridView.EnableHeadersVisualStyles = false;
+            this.OutboxDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.OutboxDataGridView.Location = new System.Drawing.Point(0, 20);
+            this.OutboxDataGridView.MultiSelect = false;
+            this.OutboxDataGridView.Name = "OutboxDataGridView";
+            this.OutboxDataGridView.ReadOnly = true;
+            this.OutboxDataGridView.RowHeadersVisible = false;
+            this.OutboxDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.OutboxDataGridView.Size = new System.Drawing.Size(695, 305);
+            this.OutboxDataGridView.TabIndex = 2;
+            // 
+            // OutboxLabel
+            // 
+            this.OutboxLabel.AutoSize = true;
+            this.OutboxLabel.Location = new System.Drawing.Point(-3, 0);
+            this.OutboxLabel.Name = "OutboxLabel";
+            this.OutboxLabel.Size = new System.Drawing.Size(51, 17);
+            this.OutboxLabel.TabIndex = 2;
+            this.OutboxLabel.Text = "Outbox";
+            // 
+            // Outbox_SentDateColumn
+            // 
+            this.Outbox_SentDateColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle7.Format = "MMMM d, yyyy HH:mm:ss";
+            this.Outbox_SentDateColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Outbox_SentDateColumn.HeaderText = "Sent Date";
+            this.Outbox_SentDateColumn.Name = "Outbox_SentDateColumn";
+            this.Outbox_SentDateColumn.ReadOnly = true;
+            this.Outbox_SentDateColumn.Width = 80;
+            // 
+            // Outbox_StatusColumn
+            // 
+            this.Outbox_StatusColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Outbox_StatusColumn.HeaderText = "Status";
+            this.Outbox_StatusColumn.Name = "Outbox_StatusColumn";
+            this.Outbox_StatusColumn.ReadOnly = true;
+            this.Outbox_StatusColumn.Width = 66;
+            // 
+            // Outbox_RecipientColumn
+            // 
+            this.Outbox_RecipientColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Outbox_RecipientColumn.HeaderText = "Recipient";
+            this.Outbox_RecipientColumn.Name = "Outbox_RecipientColumn";
+            this.Outbox_RecipientColumn.ReadOnly = true;
+            this.Outbox_RecipientColumn.Width = 84;
+            // 
+            // Outbox_ContentColumn
+            // 
+            this.Outbox_ContentColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Outbox_ContentColumn.HeaderText = "Content";
+            this.Outbox_ContentColumn.Name = "Outbox_ContentColumn";
+            this.Outbox_ContentColumn.ReadOnly = true;
+            this.Outbox_ContentColumn.Width = 76;
+            // 
+            // Outbox_IdColumn
+            // 
+            this.Outbox_IdColumn.HeaderText = "Id";
+            this.Outbox_IdColumn.Name = "Outbox_IdColumn";
+            this.Outbox_IdColumn.ReadOnly = true;
+            // 
+            // Outbox_ExtraColumn
+            // 
+            this.Outbox_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Outbox_ExtraColumn.HeaderText = "Extra";
+            this.Outbox_ExtraColumn.Name = "Outbox_ExtraColumn";
+            this.Outbox_ExtraColumn.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -573,12 +572,6 @@
         private System.Windows.Forms.DataGridView InboxDataGridView;
         private System.Windows.Forms.DataGridView OutboxDataGridView;
         private System.Windows.Forms.Label OutboxLabel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OutboxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Outbox_RecipientColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Outbox_SentDateColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Outbox_ContentColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Outbox_StatusColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Outbox_ExtraColumn;
         private System.Windows.Forms.Label SendSmsSimPortLabel;
         private System.Windows.Forms.ComboBox SendSmsSimComboBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn InboxColumn;
@@ -587,6 +580,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Inbox_ReceivedDateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Inbox_ContentColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Inbox_ExtraColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Outbox_SentDateColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Outbox_StatusColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Outbox_RecipientColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Outbox_ContentColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Outbox_IdColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Outbox_ExtraColumn;
     }
 }
 
