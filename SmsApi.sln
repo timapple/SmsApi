@@ -1,29 +1,47 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.329
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsApi", "SmsApi\SmsApi.csproj", "{5A5ED8FE-E97E-4007-94CC-E1E48CF7978E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsApi.DemoApp", "SmsApi.DemoApp\SmsApi.DemoApp.csproj", "{DE76F43C-D0A4-45FE-BDB1-50573CCD06A2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AsterNET", "AsterNET", "{0B06D56D-1816-4CD8-8756-091AA9084B18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsterNET", "AsterNET\Asterisk.2013\Asterisk.NET\AsterNET.csproj", "{373D0F13-AEF7-431D-B53B-315C05774BFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Travis|Any CPU = Travis|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5A5ED8FE-E97E-4007-94CC-E1E48CF7978E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5A5ED8FE-E97E-4007-94CC-E1E48CF7978E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A5ED8FE-E97E-4007-94CC-E1E48CF7978E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A5ED8FE-E97E-4007-94CC-E1E48CF7978E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A5ED8FE-E97E-4007-94CC-E1E48CF7978E}.Travis|Any CPU.ActiveCfg = Release|Any CPU
+		{5A5ED8FE-E97E-4007-94CC-E1E48CF7978E}.Travis|Any CPU.Build.0 = Release|Any CPU
 		{DE76F43C-D0A4-45FE-BDB1-50573CCD06A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DE76F43C-D0A4-45FE-BDB1-50573CCD06A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE76F43C-D0A4-45FE-BDB1-50573CCD06A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE76F43C-D0A4-45FE-BDB1-50573CCD06A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE76F43C-D0A4-45FE-BDB1-50573CCD06A2}.Travis|Any CPU.ActiveCfg = Release|Any CPU
+		{DE76F43C-D0A4-45FE-BDB1-50573CCD06A2}.Travis|Any CPU.Build.0 = Release|Any CPU
+		{373D0F13-AEF7-431D-B53B-315C05774BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{373D0F13-AEF7-431D-B53B-315C05774BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{373D0F13-AEF7-431D-B53B-315C05774BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{373D0F13-AEF7-431D-B53B-315C05774BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{373D0F13-AEF7-431D-B53B-315C05774BFE}.Travis|Any CPU.ActiveCfg = Travis|Any CPU
+		{373D0F13-AEF7-431D-B53B-315C05774BFE}.Travis|Any CPU.Build.0 = Travis|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{373D0F13-AEF7-431D-B53B-315C05774BFE} = {0B06D56D-1816-4CD8-8756-091AA9084B18}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {62F37865-4EAF-49BA-B87E-C3BFC0FF7B0C}

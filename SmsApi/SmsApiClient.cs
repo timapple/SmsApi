@@ -1,11 +1,11 @@
-﻿using AsterNET.Manager;
-using AsterNET.Manager.Event;
-using AsterNET.Manager.Response;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
+using AsterNET.Manager;
+using AsterNET.Manager.Event;
+using AsterNET.Manager.Response;
 
 namespace SmsApi
 {
@@ -52,7 +52,9 @@ namespace SmsApi
 
             _managerConnection = new ManagerConnection(host, port, username, password)
             {
-                FireAllEvents = true
+                FireAllEvents = true,
+                DefaultResponseTimeout = 5000,
+                KeepAlive = true,
             };
 
             SimPortIncremented = true;
@@ -285,7 +287,7 @@ namespace SmsApi
         {
             try
             {
-                var response = _managerConnection.SendAction(new SmsCommandAction("gsm show spans"));
+                var response = _managerConnection.SendAction(new SmsCommandAction("gsm show spans"), 2000);
 
                 if (response is CommandResponse commandResponse)
                 {
@@ -334,24 +336,29 @@ namespace SmsApi
 
         private string GetSimNetworkName(int port)
         {
-            //try
-            //{
-            //    _managerConnection.SendAction(new SmsCommandAction("gsm show spans"));
-            //    var response = _managerConnection.SendAction(new SmsCommandAction($"gsm show span {port}"));
+            try
+            {
+                //_managerConnection.SendAction(new SmsCommandAction("gsm show spans"));
+                var response = _managerConnection.SendAction(new SmsCommandAction($"gsm show span {port}"), 5000);
 
-            //    if (response is CommandResponse commandResponse)
-            //    {
-            //        return commandResponse.Result[5];
-            //    }
-            //    else
-            //    {
-            //        return "Network Unavailable";
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
+                if (response is CommandResponse commandResponse)
+                {
+                    var rawNetworkName = commandResponse.Result.SingleOrDefault(r => r.StartsWith("Network Name:"));
+                    if (rawNetworkName is null)
+                        return "Network Unavailable";
+                    else
+                        return rawNetworkName.Split(':')[1].Trim();
+                }
+                else
+                {
+                    return "Network Unavailable";
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
                 return "Network Unavailable";
-            //}
+            }
         }
 
         private bool IsAllowedSimPort(int simPort, PhoneNumber phoneNumber)

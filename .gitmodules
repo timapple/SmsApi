@@ -1,0 +1,3 @@
+[submodule "AsterNET"]
+	path = AsterNET
+	url = https://github.com/AsterNET/AsterNET.git

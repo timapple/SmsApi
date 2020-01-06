@@ -48,7 +48,7 @@ namespace SmsApi
 
         public override string ToString()
         {
-            return $"Port {Port}";
+            return $"Port: {Port}, Network Name: \"{NetworkName}\"";
         }
     }
 }
