@@ -141,6 +141,7 @@ namespace SmsApi
         {
             _managerConnection.ConnectionState -= _managerConnection_ConnectionState;
             _managerConnection.UnhandledEvent -= _managerConnection_UnhandledEvent;
+            _managerConnection.Status -= _managerConnection_Status;
         }
 
         private void _managerConnection_ConnectionState(object sender, ConnectionStateEvent e)
