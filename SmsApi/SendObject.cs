@@ -4,7 +4,7 @@ namespace SmsApi
 {
     public sealed class SendObject
     {
-        public const int MAX_CONTENT_LENGTH = 6000;
+        public const int MAX_CONTENT_LENGTH = 1024;
 
         public SendObject(Guid id, PhoneNumber recipient, string content)
         {
